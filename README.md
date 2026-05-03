@@ -1,27 +1,5 @@
 # 💪 GoJim - Gym Management System
 
-A desktop gym management application built with Java Swing and MySQL.
-
-## 📌 Table of Contents
-- [Overview](#-overview)
-- [Features](#-features)
-  - [Dashboard](#-dashboard)
-  - [Members Management](#-members-management)
-  - [Subscriptions (Plans)](#-subscriptions-plans)
-  - [Trainers Management](#️-trainers-management)
-  - [Payments](#-payments)
-- [Business Logic](#-business-logic)
-- [Technical Details](#-technical-details)
-  - [Architecture](#-architecture)
-  - [UI Design](#-ui-design)
-  - [Navigation System](#-navigation-system)
-  - [Database Schema](#-database-schema)
-- [Setup Instructions](#️-setup-instructions)
-- [Default Login](#-default-login)
-- [Future Improvements](#-future-improvements)
-- [Author](#-author)
-- [License](#-license)
-
 ## 📌 Overview
 **GoJim** is a desktop gym management application built using **Java Swing** and **MySQL**.
 It provides an intuitive dashboard to manage members, subscriptions, trainers, and payments with real-time updates.
@@ -69,7 +47,6 @@ It provides an intuitive dashboard to manage members, subscriptions, trainers, a
 - Revenue calculation (paid & pending)
 
 ## 🧠 Business Logic
-
 - When a member is created:
   - Status = **Pending**
   - A **payment record is automatically created**
@@ -80,8 +57,7 @@ It provides an intuitive dashboard to manage members, subscriptions, trainers, a
 
 ## 🏗️ Technical Details
 
-### Architecture
-
+### Architecture Overview
 ```text
 UI (Swing Panels & Components)
         ↓
@@ -102,7 +78,7 @@ com.gojim
 │   └── components/→ Reusable UI components
 ```
 
-### 🧩 UI Design
+### UI Design
 Built with Java Swing
 Custom components:
     Rounded panels
@@ -112,15 +88,13 @@ Custom components:
 Dark theme with consistent color system (AppColors)
 Single-window navigation using CardLayout
 
-### 🔄 Navigation System
-
+### Navigation System
 The app uses CardLayout:
 One window → multiple panels → switch dynamically
 Example:
 cardLayout.show(contentPanel, "Members");
 
-### 🗄️ Database Schema
-
+### Database Schema
 Tables:
     subscriptions
     members
@@ -128,29 +102,25 @@ Tables:
     payments
 
 Relationships:
-subscriptions → members → payments
+suscriptions → members → payments
 
 ## ⚙️ Setup Instructions
 
 1. Clone the repository
-    `git clone https://github.com/YOUR_USERNAME/gojim.git`
-    `cd gojim`
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/gojim.git
+    cd gojim
+    ```
 2. Setup MySQL
-    Open phpMyAdmin or MySQL
-    Import `schema.sql`
+    Open phpMyAdmin or MySQL and import `schema.sql`.
 3. Configure database connection
-    Edit:
-        `DatabaseConnection.java`
-    Set:
-        `URL`
-        `USERNAME`
-        `PASSWORD`
+    Edit `src/com/gojim/config/DatabaseConnection.java` and set the `URL`, `USERNAME`, and `PASSWORD`.
 4. Run the application
-    Run `Main.java`
+    Run `src/com/gojim/Main.java`.
 
 ## 🔐 Default Login
-    Username: `admin`
-    Password: `admin`
+- Username: `admin`
+- Password: `admin`
 
 ## 🎯 Future Improvements
 - Role-based authentication (admin/user)
@@ -160,8 +130,7 @@ subscriptions → members → payments
 - Multi-user support
 
 ## 👨‍💻 Author
-- Edris Korbi
-- Computer Science Student
+- Edris Korbi (Computer Science Student)
 
 ## 📄 License
 This project is for educational purposes.
